@@ -1,4 +1,8 @@
-   from kivymd.app import MDApp
+   
+            
+
+                
+from kivymd.app import MDApp
 
 from kivy.core.text import LabelBase
 
@@ -19,23 +23,14 @@ import webbrowser
 
 
 firebaseConfig = {
-
-    'apiKey': "AIzaSyCFNSIXIrXpKOThg8jEZBSCNQjUiJfv8rs",
-
-    'authDomain': "entrarcadastraresdrasvictor.firebaseapp.com",
-
-    'projectId': "entrarcadastrar@esdras",
-
-    'databaseURL': "https://entrarcadastrarmelo-default-rtdb.firebaseio.com/",
-
-    'storageBucket': "entrarcadastrarvictor.appspot.com",
-
-    'messagingSenderId': "1099376357829",
-
-    'appId': "1:1099376357829:web:40c34a58434714dcf55bac",
-
-    'measurementId': "G-G44Z2XQDG7"
-
+    'apiKey': "AIzaSyDK-986TqJKhsg9gfL1mbqK6g2GQwu8h1g",
+    'authDomain': "cadastroesdras.firebaseapp.com",
+    'projectId': "cadastroesdras",
+    'databaseURL': "https://cadastroesdras-default-rtdb.firebaseio.com/",
+    'storageBucket': "cadastroesdras.appspot.com",
+    'messagingSenderId': "447236985164",
+    'appId': "1:447236985164:web:2ef253837b22ee6253ffe9",
+    'measurementId': "G-3XS7QY17WB"
 }
 
 
@@ -201,36 +196,24 @@ ScreenManager:
 
 
         Button:
-
             text: "ENTRAR"
-
             font_name: "Arial"
-
             font_size: "20sp"
-
             size_hint: .5, .08
-
             pos_hint: {"center_x": .5, "center_y": .45}
-
             background_color: 0, 0, 0, 0
-
             canvas.before:
-
                 Color:
-
                     rgb: (0/255, 0/255, 139/255, 1)
 
                 RoundedRectangle:
-
                     size: self.size
-
                     pos: self.pos
 
             on_release:
-
                 print("Login realizado", email_login.text, senha_login.text)
-
                 app.my_firebaselogin.Login(email_login.text, senha_login.text, login_message)
+                root.manager.transition.direction = "right"
 
 
 
@@ -576,4 +559,4 @@ class MyFirebaseLogin:
 
 if __name__ == '__main__':
 
-    TesteApp().run()                 
+    TesteApp().run()
